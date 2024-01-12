@@ -3,7 +3,7 @@
    * Plugin Name:     Dilate WP OpenstreetMap
    * Plugin URI:      https://www.dilate.com.au
    * Description:     Use openstreetmap on your site
-   * Version:         0.0.2
+   * Version:         0.0.3
    * Author:          William Donayre Jr. - Dilate Digital LLC
    * Author URI:      https://www.dilate.com.au
    * Text Domain:     wp-openstreetmap
@@ -42,8 +42,7 @@
   //Set the branch that contains the stable release.
   $myUpdateChecker->setBranch('main');
 
-    //Optional: If you're using a private repository, specify the access token like this:
-    $myUpdateChecker->setAuthentication('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');
+    //$myUpdateChecker->setAuthentication('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');
 
     if( !class_exists('DDOpenstreetmap') ) {
       require_once \plugin_dir_path( __FILE__ ) . 'vendor/autoload.php';
