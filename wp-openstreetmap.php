@@ -3,7 +3,7 @@
    * Plugin Name:     Dilate WP OpenstreetMap
    * Plugin URI:      https://www.dilate.com.au
    * Description:     Use openstreetmap on your site
-   * Version:         0.0.1
+   * Version:         0.0.2
    * Author:          William Donayre Jr. - Dilate Digital LLC
    * Author URI:      https://www.dilate.com.au
    * Text Domain:     wp-openstreetmap

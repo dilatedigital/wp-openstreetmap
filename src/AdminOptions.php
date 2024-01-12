@@ -33,23 +33,6 @@ class AdminOptions {
     $instance = self::instance();
 
     \add_action( 'carbon_fields_register_fields', function(){
-    
-      /**
-        * MAIN CONTAINER in Options
-      */
-
-      $plugin_options = Container::make( 'theme_options', 'Dilate Openstreetmap Maker');
-
-      /**
-       * Variables and Constants
-       */
-      $plugin_options->add_tab(
-        __('Variables and Constants'),
-        [
-          Field::make( 'textarea', 'crb_variables_object', __( '' ) )
-            ->set_classes( 'ddopenstreetmap_variable_object' )
-        ]
-      );
 
       $locationLabels = array(
         'plural_name' => 'Locations',
@@ -73,9 +56,6 @@ class AdminOptions {
                     Field::make('text', 'icon_width', 'Map Marker Icon Width')     ->set_width( 30 )->set_default_value( 35 ),
                     Field::make('text', 'icon_height', 'Map Marker Icon Height')   ->set_width( 30 )->set_default_value( 44 ),
                     Field::make( 'textarea', 'location_label', 'Location Label' )
-                        // ->set_attribute( 'rows', 10 ) // Adjust the number of rows as needed
-                        // ->set_help_text( 'Add your content using the WYSIWYG editor.' )
-                        // ->set_editor_settings( array( 'media_buttons' => false ) ),
                 ))
         ));
     });
