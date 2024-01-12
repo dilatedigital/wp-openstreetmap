@@ -57,17 +57,28 @@ function ddopenstreetmap_func( $atts ) {
     echo 'var locations = ' . json_encode($outLocations).'; ';
     echo "var map = L.map('dilate-map-".$dmap_id."').setView(['".$set_view_lat."', '".$set_view_long."'], ".$zoom_level.");";
     echo 'locations.forEach(function(location) {
-        var customIcon = L.icon({
-          iconUrl: location.icon,
-          iconSize: [location.icon_width, location.icon_height],
-          iconAnchor: [22, 94],
-          popupAnchor: [-3, -76]
-        });
+        if(location.icon){
+            var customIcon = L.icon({
+            iconUrl: location.icon,
+            iconSize: [location.icon_width, location.icon_height],
+            iconAnchor: [22, 94],
+            popupAnchor: [-3, -76]
+            });
+        }
 
-        var _marker = L.marker([location.lat, location.lon], { icon: customIcon }).addTo(map);
+        var _marker = null;
+        if(location.icon){
+            _marker = L.marker([location.lat, location.lon], { icon: customIcon }).addTo(map);
+        }
+        else{
+            _marker = L.marker([location.lat, location.lon]).addTo(map);
+        }
+
+        
         if(location.location_label){
             _marker.bindPopup(location.location_label);
         }
+
       });';
     echo "L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: \"© <a href='https://www.openstreetmap.org/copyright'>OpenStreetMap</a> contributors\"
