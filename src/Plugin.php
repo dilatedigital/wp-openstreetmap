@@ -103,7 +103,7 @@ class Plugin {
 
             \add_action('manage_ddopenstreetmap_posts_custom_column', function( $column, $post_id ){
                 if ($column == 'ddopenstreetmap') {
-                    echo do_shortcode("[dilatemap id=\"$post_id\"]");
+                    echo ("[dilatemap id=\"$post_id\"]");
                 }
             }, 10, 2);
 
