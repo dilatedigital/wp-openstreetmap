@@ -11,7 +11,7 @@
    *
    * @package         DilateOpenStreetMap
    * @author          william.donayre
-   * @copyright       2023
+   * @copyright       2023..
   */
 
   namespace Dilate;
